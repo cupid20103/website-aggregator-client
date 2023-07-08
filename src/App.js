@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Loading from "./Loading";
 
-const { REACT_APP_SERVER_URI } = process.env;
+const { REACT_APP_SERVER_URL } = process.env;
 
 const App = () => {
   const [url, setURL] = useState("");
@@ -19,7 +19,7 @@ const App = () => {
 
   async function sendURL() {
     try {
-      const request = await fetch(REACT_APP_SERVER_URI + "/api/url", {
+      const request = await fetch(REACT_APP_SERVER_URL + "/api/url", {
         method: "POST",
         body: JSON.stringify({
           url,
